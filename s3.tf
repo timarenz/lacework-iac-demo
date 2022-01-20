@@ -6,6 +6,6 @@ resource "aws_s3_bucket" "public" {
 
 resource "aws_s3_bucket" "private" {
   bucket        = "s3-${random_id.id.hex}"
-  acl           = "public-read"
+  acl           = "private"
   force_destroy = true
 }
