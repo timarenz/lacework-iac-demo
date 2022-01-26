@@ -31,3 +31,7 @@ spec:
             limits:
               cpu: 500m
               memory: 512m
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
