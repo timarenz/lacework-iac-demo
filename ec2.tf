@@ -32,7 +32,7 @@ resource "aws_security_group" "web" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = ["${lookup(jsondecode(data.http.current_ip.body), "ip")}/32"]
   }
 
   egress {
