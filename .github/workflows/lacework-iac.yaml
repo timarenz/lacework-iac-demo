@@ -18,7 +18,7 @@ jobs:
              echo "SCAN_COMMAND=tf-scan" >> env.list
              echo "WORKSPACE=src" >> env.list
              echo "EXIT_FLAG=critical=1" >> env.list
-             docker run --env-file env.list -v "$(pwd):/app/src" --user root lacework/codesec-iac:latest
+             docker run --env-file env.list -v "$(pwd):/app/src" --user runner lacework/codesec-iac:latest
         env:
           LW_ACCOUNT: ${{ secrets.LW_ACCOUNT }}
           LW_SUBACCOUNT: ${{ secrets.LW_SUBACCOUNT }}
