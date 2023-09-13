@@ -13,7 +13,7 @@ jobs:
       - name: Scan the repo for vulnerabilities in IaC
         run: |
              echo $(pwd)
-             env | grep "GITHUB_/|LW_/|CI_" > env.list
+             env | grep "GITHUB_\|LW_\|CI_" > env.list
              echo "SCAN_COMMAND=tf-scan" >> env.list
              echo "WORKSPACE=src" >> env.list
              echo "EXIT_FLAG=critical=1" >> env.list
