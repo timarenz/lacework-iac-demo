@@ -16,7 +16,7 @@ jobs:
              env | grep "GITHUB_\|LW_\|CI_" > env.list
              echo "SCAN_COMMAND=tf-scan" >> env.list
              echo "WORKSPACE=src" >> env.list
-             echo "EXIT_FLAG='Critical'" >> env.list 
+             echo "EXIT_FLAG='CRITICAL'" >> env.list 
              docker run --env-file env.list -v "$(pwd):/app/src" lacework/codesec-iac:latest
         env:
           LW_ACCOUNT: ${{ secrets.LW_ACCOUNT }}
